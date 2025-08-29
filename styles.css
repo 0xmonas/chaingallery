@@ -1,0 +1,454 @@
+/* Modern CSS Custom Properties for 2025 Layout Standards */
+:root {
+  /* Spacing Scale - Using consistent 8px base unit */
+  --space-xs: 0.25rem;   /* 4px */
+  --space-sm: 0.5rem;    /* 8px */
+  --space-md: 1rem;      /* 16px */
+  --space-lg: 1.5rem;    /* 24px */
+  --space-xl: 2rem;      /* 32px */
+  --space-2xl: 3rem;     /* 48px */
+  --space-3xl: 4rem;     /* 64px */
+  
+  /* Layout constraints */
+  --content-max-width: 65ch;
+  --content-padding-inline: var(--space-xl);
+  
+  /* Container spacing */
+  --container-gap: var(--space-md);
+  --section-gap: var(--space-2xl);
+}
+
+@keyframes blink {
+  from, to { opacity: 1 }
+  50% { opacity: 0; }
+}
+
+body {
+  background-color: #ffffff;
+  color: #000000;
+  font-family: 'Kosugi', sans-serif;
+  font-size: 1.1rem;
+  line-height: 1.6;
+  margin: 0;
+  padding-block: var(--space-xl);
+  padding-inline: var(--content-padding-inline);
+}
+
+#root {
+  /* Modern CSS Grid Layout for 2025 */
+  display: grid;
+  grid-template-rows: auto 1fr auto;
+  min-height: 100vh;
+  max-width: var(--content-max-width);
+  margin-inline: auto;
+  gap: var(--section-gap);
+}
+
+/* Reset headers to have the same font size as the body */
+h1, h2, h3, h4, h5, h6 {
+  font-size: 1em; /* 1em equals the parent font-size, which is 1.1rem from body */
+  margin: 0;
+  font-weight: normal; /* Ensure no bolding by default */
+}
+
+/* Reset button for link-like behavior */
+button {
+  background: none;
+  border: none;
+  padding: 0;
+  font: inherit;
+  color: inherit;
+  cursor: pointer;
+}
+
+.interactive-word {
+  color: #000000;
+  text-decoration: none;
+  transition: color 0.2s ease-in-out;
+}
+
+.interactive-word:hover {
+  color: #0000ff;
+  text-decoration: underline;
+}
+
+.footer-text {
+  font-size: 0.9em;
+  color: #888;
+  margin: 0;
+}
+
+.footer-text a, .footer-text button {
+  color: inherit;
+  text-decoration: none;
+  transition: color 0.2s ease-in-out;
+}
+
+.footer-text a:hover, .footer-text button:hover {
+  color: #0000ff;
+  text-decoration: underline;
+}
+
+.footer-text button {
+  color: inherit;
+  text-decoration: none;
+  transition: color 0.2s ease-in-out;
+  background: none;
+  border: none;
+  padding: 0;
+  font: inherit;
+  cursor: pointer;
+}
+
+.ascii-art {
+  font-family: monospace;
+  text-align: start;
+  white-space: pre;
+  color: #888;
+  margin-block: var(--space-xl);
+  line-height: 1.1;
+  font-size: 0.8em;
+}
+
+.blinking-cursor {
+  animation: blink 1s step-end infinite;
+}
+
+.random-button {
+  background: none;
+  border: none;
+  padding-block: var(--space-sm);
+  padding-inline: 0;
+  font: inherit;
+  color: #000000;
+  cursor: pointer;
+  white-space: nowrap;
+}
+
+/* Removed outdated absolute positioning - now handled by CSS Grid */
+
+.random-button:hover:not(:disabled) {
+  color: #0000ff;
+}
+
+.random-button:disabled {
+  color: #ccc;
+  cursor: not-allowed;
+}
+
+.footer {
+  /* Modern footer within CSS Grid layout */
+  text-align: center;
+  padding-block: var(--space-lg);
+  background-color: #ffffff;
+  border-block-start: 1px solid transparent;
+}
+
+/* Footer content inherits alignment from #root - no additional styles needed */
+
+/* Modern Modal Layout */
+.modal-overlay {
+  position: fixed;
+  inset: 0;
+  background-color: rgba(0, 0, 0, 0.75);
+  display: grid;
+  place-items: center;
+  z-index: 1000;
+  padding-inline: var(--space-md);
+}
+
+.modal-content {
+  background-color: #fff;
+  padding: var(--space-xl);
+  border: 1px solid #000;
+  width: 100%;
+  max-width: 500px;
+  box-sizing: border-box;
+}
+
+.modal-input {
+  width: 100%;
+  padding-block: var(--space-sm);
+  padding-inline: var(--space-xs);
+  font: inherit;
+  font-size: 1rem;
+  border: 1px solid #000;
+  border-radius: 0;
+  box-sizing: border-box;
+  margin-block-end: var(--space-lg);
+  background-color: #fff;
+  color: #000;
+}
+
+.modal-actions {
+  display: flex;
+  justify-content: flex-end;
+  gap: var(--space-lg);
+}
+
+.modal-button {
+  /* Reset to be like a link */
+  background: none;
+  border: none;
+  padding: 0;
+  font: inherit;
+  color: #000;
+  cursor: pointer;
+  text-decoration: none;
+  transition: color 0.2s ease-in-out;
+}
+
+.modal-button:hover {
+  color: #0000ff;
+  text-decoration: underline;
+}
+
+.nft-title-link {
+  color: inherit;
+  text-decoration: none;
+  transition: color 0.2s ease-in-out;
+}
+
+.nft-title-link:hover {
+  color: #0000ff;
+}
+
+/* Modern Search Bar Layout */
+.search-container {
+  display: grid;
+  grid-template-columns: 1fr auto 1fr;
+  grid-template-areas: "search collection random";
+  align-items: baseline;
+  gap: var(--container-gap);
+  margin-block-end: var(--space-2xl);
+}
+
+.search-form {
+  grid-area: search;
+}
+
+.collection-button {
+  grid-area: collection;
+  justify-self: center;
+}
+
+.random-button-container {
+  grid-area: random;
+  justify-self: end;
+}
+
+main {
+  /* Modern main content layout */
+  display: grid;
+  gap: var(--space-2xl);
+  max-width: 100%;
+  box-sizing: border-box;
+}
+
+/* Search form now uses CSS Grid area - no additional flex styles needed */
+
+.search-input {
+  width: 100%;
+  padding-block: var(--space-sm);
+  padding-inline: var(--space-xs);
+  font: inherit;
+  color: inherit;
+  border: none;
+  border-block-end: 1px solid transparent;
+  background-color: transparent;
+  box-sizing: border-box;
+  outline: none;
+}
+
+.search-input:disabled {
+  color: #ccc;
+}
+
+.search-input::placeholder {
+  color: #000000;
+  opacity: 1;
+}
+
+/* Modern main title styling */
+.main-title {
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+  text-align: center;
+  margin-block-end: var(--space-xl);
+}
+
+/* Modern layout utility classes */
+.loading-indicator {
+  text-align: center;
+  margin-block-end: var(--space-xl);
+  color: #888;
+}
+
+.nft-section {
+  margin-block-end: var(--space-xl);
+}
+
+.error-container {
+  border: 1px solid #cc0000;
+  padding: var(--space-md);
+  color: #cc0000;
+}
+
+.error-container p {
+  margin: 0;
+}
+
+.error-container p + p {
+  margin-block-start: var(--space-sm);
+}
+
+.content-placeholder {
+  color: #888;
+  padding-block: var(--space-xl);
+}
+
+.section-title {
+  margin-block-end: var(--space-xl);
+}
+
+/* Modern notification toast */
+.notification-toast {
+  position: fixed;
+  inset-block-start: var(--space-md);
+  inset-inline-end: var(--space-md);
+  z-index: 1001;
+  color: white;
+  padding-block: var(--space-sm);
+  padding-inline: var(--space-md);
+  border-radius: 4px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  cursor: pointer;
+}
+
+.notification-toast.error {
+  background-color: #ff4444;
+}
+
+.notification-toast.success {
+  background-color: #44ff44;
+}
+
+/* Modern footer button */
+.footer-button {
+  display: inline-flex;
+  align-items: center;
+  gap: var(--space-xs);
+  background: none;
+  border: none;
+  padding: 0;
+  font: inherit;
+  color: inherit;
+  cursor: pointer;
+  text-decoration: none;
+  transition: color 0.2s ease-in-out;
+}
+
+.footer-button:hover {
+  color: #0000ff;
+  text-decoration: underline;
+}
+
+/* Removed responsive design - keeping consistent desktop layout across all screen sizes */
+
+/* Modern NFT Display Layout */
+.nft-container {
+  min-height: 300px;
+  display: grid;
+  place-items: center;
+  background-color: #f0f0f0;
+  border-radius: 4px;
+}
+
+.nft-container.transparent {
+  background-color: transparent;
+}
+
+.nft-image {
+  width: 100%;
+  height: auto;
+  aspect-ratio: 1 / 1;
+  object-fit: cover;
+  background-color: #f0f0f0;
+  transition: opacity 0.3s ease-in-out;
+  border-radius: 4px;
+}
+
+.nft-image.loading {
+  opacity: 0.5;
+}
+
+.nft-image.loaded {
+  opacity: 1;
+}
+
+.nft-loading-text {
+  color: #888;
+}
+
+/* Modern Content Display Layout */
+.streaming-content {
+  margin: 0;
+  min-height: 1.6em; /* Reduce layout shift */
+}
+
+.final-content {
+  margin: 0;
+}
+
+/* Modern Loading Skeleton Layout */
+.loading-skeleton {
+  display: grid;
+  gap: var(--space-sm);
+}
+
+.skeleton-bar {
+  height: 1rem;
+  background-color: #e0e0e0;
+}
+
+.skeleton-bar.full { width: 100%; }
+.skeleton-bar.large { width: 83.33%; }
+.skeleton-bar.medium { width: 75%; }
+.skeleton-bar.small { width: 66.66%; }
+
+/* Modern Modal Content Styling */
+.modal-title {
+  margin-block-start: 0;
+  margin-block-end: var(--space-lg);
+  font-weight: normal;
+}
+
+/* Modern Focus Management for Accessibility */
+.search-input:focus-visible {
+  outline: 2px solid #0000ff;
+  outline-offset: 2px;
+  border-block-end: 1px solid #0000ff;
+}
+
+.modal-input:focus-visible {
+  outline: 2px solid #0000ff;
+  outline-offset: 2px;
+}
+
+.modal-button:focus-visible,
+.random-button:focus-visible,
+.footer-button:focus-visible {
+  outline: 2px solid #0000ff;
+  outline-offset: 2px;
+}
+
+.nft-title-link:focus-visible {
+  outline: 2px solid #0000ff;
+  outline-offset: 2px;
+}
+
+/* Improve keyboard navigation */
+.interactive-word:focus-visible {
+  outline: 2px solid #0000ff;
+  outline-offset: 2px;
+}

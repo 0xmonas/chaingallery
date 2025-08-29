@@ -1,0 +1,56 @@
+# Logs
+logs
+*.log
+npm-debug.log*
+yarn-debug.log*
+pnpm-debug.log*
+lerna-debug.log*
+
+# Dependencies
+node_modules
+dist
+dist-ssr
+*.local
+
+# Environment variables - CRITICAL!
+.env
+.env.local
+.env.development
+.env.production
+.env.*
+*.env
+
+# API Keys and Secrets
+*.key
+*.secret
+secrets/
+keys/
+
+# Build outputs
+build/
+out/
+.next/
+.nuxt/
+
+# Editor directories and files
+.vscode/*
+!.vscode/extensions.json
+.idea
+.DS_Store
+*.suo
+*.ntvs*
+*.njsproj
+*.sln
+*.sw?
+
+# OS generated files
+Thumbs.db
+ehthumbs.db
+Desktop.ini
+
+# Temporary files
+*.tmp
+*.temp
+.cache/
+server/temp/
+temp/
