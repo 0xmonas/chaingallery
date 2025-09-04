@@ -13,7 +13,7 @@ export async function* streamNftDescription(
   try {
     // Use local backend for development, production backend for production
     const BACKEND_URL = import.meta.env.DEV ? 'http://localhost:3001' : '';
-    const response = await fetch(`${BACKEND_URL}/api/gemini`, {
+    const response = await fetch(`${BACKEND_URL}/api/gemini/stream-nft-description`, {
       method: 'POST',
       headers: {
         'Content-Type': 'application/json',
